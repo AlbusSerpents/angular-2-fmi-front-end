@@ -6,12 +6,16 @@ import { AuthStorageService } from '../auth/auth.storage.service';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ErrorResponse, ErroCode } from './error.response';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ConnectorService {
   private baseUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient, private authData: AuthStorageService) { }
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private authData: AuthStorageService) { }
 
   public get<Response>(
     url: string,
@@ -84,6 +88,7 @@ export class ConnectorService {
     const error: ErrorResponse = e.error;
     if (error.code === ErroCode.AUTHENTICATION_REQUIRED) {
       this.authData.clearCredentials();
+      this.router.navigateByUrl('/login');
     }
     throw e.error;
   }
