@@ -4,6 +4,7 @@ import { LoggedInChildGuard } from './core/guards/logged-in.child.guard';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegistrationComponent } from './home/registration/registration.component';
+import { MyProfileComponent } from './users/my-profile/my-profile.component';
 
 const routes: Routes = [
   {
@@ -21,7 +22,11 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    redirectTo: '/'
+  },
+  {
+    path: 'my-profile',
+    component: MyProfileComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

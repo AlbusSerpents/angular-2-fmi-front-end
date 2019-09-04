@@ -1,0 +1,34 @@
+<div class="screen">
+  <div class="container-form">
+    <form (ngSubmit)="edit(form)" #form="ngForm" class="forms-container">
+      <div class="form-field">
+        <div class="input-field">
+          <label for="username-input">Username:</label>
+          <input id="username-input" [(ngModel)]="profile.username" name="username" #username="ngModel" disabled />
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="name-input">Name:</label>
+          <input id="name-input" [(ngModel)]="profile.name" name="name" #name="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(name.dirty || name.touched) && !name.valid">
+          Invalid name
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="email-input">Email:</label>
+          <input id="email-input" type="email" [(ngModel)]="profile.email" name="email" #email="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(email.dirty || email.touched) && !email.valid">
+          Invalid Email
+        </div>
+      </div>
+      <div class="buttons-block">
+        <button type="submit" [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Update Profile</button>
+        <button (click)="back()" [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
