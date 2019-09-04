@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { HomeService } from '../services/home.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
