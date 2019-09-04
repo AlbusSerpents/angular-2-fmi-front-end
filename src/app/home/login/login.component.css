@@ -1,4 +1,6 @@
 .screen {
+  filter: grayscale(65%);
+  opacity: 50%;
   background-color: bisque;
   display: flex;
   align-items: center;

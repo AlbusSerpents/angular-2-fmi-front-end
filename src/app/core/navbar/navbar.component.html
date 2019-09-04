@@ -1,8 +1,8 @@
 <nav class="main-navbar">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">Brain Hack</a>
+    <a class="navbar-brand" (click)="home()">Brain Hack</a>
   </div>
-  <div class="navbar-buttons" *ngIf="loggedIn">
+  <div class="navbar-buttons" *ngIf="auth.isLoggedIn()">
     <button class="navbar-button" (click)="myProfile()">My Profile</button>
     <button class="navbar-button" (click)="logout()">Logout</button>
   </div>

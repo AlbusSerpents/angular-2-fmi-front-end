@@ -1,4 +1,6 @@
 .main-navbar {
+  filter: grayscale(65%);
+  opacity: 50%;
   background-color: rgb(103, 71, 92);
   color: azure;
   border-radius: 0;
