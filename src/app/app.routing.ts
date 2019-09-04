@@ -3,6 +3,7 @@ import { LoggedInGuard } from './core/guards/logged-in.guard';
 import { LoggedInChildGuard } from './core/guards/logged-in.child.guard';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LoginComponent } from './home/login/login.component';
+import { RegistrationComponent } from './home/registration/registration.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegistrationComponent,
   },
   {
     path: 'home',

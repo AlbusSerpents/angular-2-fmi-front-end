@@ -1,0 +1,45 @@
+<div class="screen">
+  <div class="container-form">
+    <form (ngSubmit)="register(form)" #form="ngForm" class="forms-container">
+      <div class="form-field">
+        <div class="input-field">
+          <label for="username-input">Username:</label>
+          <input id="username-input" [(ngModel)]="request.username" name="username" #username="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(username.dirty || username.touched) && !username.valid">
+          Invalid Username
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="password-input">Password:</label>
+          <input id="password-input" type="password" [(ngModel)]="request.password" name="password" #password="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(password.dirty || password.touched) && !password.valid">
+          Invalid Password
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="email-input">Email:</label>
+          <input id="email-input" type="email" [(ngModel)]="request.email" name="email" #email="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(email.dirty || email.touched) && !email.valid">
+          Invalid Email
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="name-input">Name:</label>
+          <input id="name-input" type="name" [(ngModel)]="request.name" name="name" #name="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(name.dirty || name.touched) && !name.valid">
+          Invalid name
+        </div>
+      </div>
+      <div class="buttons-block">
+        <button [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
