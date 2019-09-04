@@ -9,7 +9,7 @@ import { ErrorResponse, ErroCode } from './error.response';
 
 @Injectable()
 export class ConnectorService {
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient, private authData: AuthStorageService) { }
 
@@ -79,7 +79,7 @@ export class ConnectorService {
     return { headers, parameters };
   }
 
-  private handleError<A>(e): Observable<A> {
+  private handleError<A>(e: any): Observable<A> {
     console.log(e);
     const error: ErrorResponse = e.error;
     if (error.code === ErroCode.AUTHENTICATION_REQUIRED) {
