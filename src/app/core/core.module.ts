@@ -9,6 +9,7 @@ import { LoggedInChildGuard } from './guards/logged-in.child.guard';
 import { FormsModule } from '@angular/forms';
 import { AuthStorageService } from './auth/auth.storage.service';
 import { AlertService } from './alert/alert.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,8 @@ import { AlertService } from './alert/alert.service';
     LoggedInGuard,
     LoggedInChildGuard,
     AlertService
-  ]
+  ],
+  declarations: [NavbarComponent],
+  exports: [NavbarComponent]
 })
 export class CoreModule { }

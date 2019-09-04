@@ -12,24 +12,6 @@
   filter: grayscale(65%);
 }
 
-.navbar {
-  background-color: rgb(103, 71, 92);
-  color: azure;
-  border-radius: 0;
-}
-
-.navbar-expand-lg {
-  padding-top: 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.navbar-brand {
-  margin-left: 5rem;
-}
-
 .buttons {
   padding-right: 3rem;
   display: flex;
