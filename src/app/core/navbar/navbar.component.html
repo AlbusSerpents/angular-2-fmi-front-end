@@ -1,3 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-inverse bg-secondary">
-  <a class="navbar-brand" href="#">Brain Hack</a>
+<nav class="main-navbar">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">Brain Hack</a>
+  </div>
+  <div class="navbar-buttons" *ngIf="loggedIn">
+    <button class="navbar-button" (click)="myProfile()">My Profile</button>
+    <button class="navbar-button" (click)="logout()">Logout</button>
+  </div>
 </nav>
