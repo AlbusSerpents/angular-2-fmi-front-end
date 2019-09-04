@@ -1,0 +1,27 @@
+<div class="screen">
+  <div class="container-form">
+    <form (ngSubmit)="login(form)" #form="ngForm" class="forms-container">
+      <div class="form-field">
+        <div class="input-field">
+          <label for="username-input">Username:</label>
+          <input id="username-input" [(ngModel)]="request.username" name="username" #username="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(username.dirty || username.touched) && !username.valid">
+          Invalid Username
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="password-input">Password:</label>
+          <input id="password-input" type="password" [(ngModel)]="request.password" name="password" #password="ngModel" required />
+        </div>
+        <div class="inp-error" *ngIf="(password.dirty || password.touched) && !password.valid">
+          Invalid Password
+        </div>
+      </div>
+      <div class="buttons-block">
+        <button [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
