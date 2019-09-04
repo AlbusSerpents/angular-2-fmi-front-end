@@ -1,5 +1,5 @@
 .base {
-  background: url(../../../assets/background.jpg) no-repeat center center fixed;
+  background: bisque no-repeat center center fixed;
   width: 100%;
   height: auto;
   position: fixed;
@@ -10,4 +10,88 @@
   min-height: 100%;
   min-width: 1024px;
   filter: grayscale(65%);
+}
+
+.navbar {
+  background-color: rgb(103, 71, 92);
+  color: azure;
+  border-radius: 0;
+}
+
+.navbar-expand-lg {
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.navbar-brand {
+  margin-left: 5rem;
+}
+
+.buttons {
+  padding-right: 3rem;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+}
+
+.big-button {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 2rem;
+  color: bisque;
+  background-color: rgb(103, 71, 92);
+  font-size: 5rem;
+  border-radius: 0.5rem;
+  border: solid 1rem;
+  border-color: rgb(103, 71, 92);
+}
+
+.big-button:hover {
+  color: rgb(103, 71, 92);
+  background-color: bisque;
+  border: solid 1 rem;
+}
+
+.body {
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content-container {
+  display: inline-block;
+  width: 900px;
+  color: rgb(103, 71, 92);
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 1rem;
+}
+
+.title {
+  padding-left: 4rem;
+  margin-bottom: 2rem;
+}
+
+.page-content {
+  font-size: 1.8rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border-color: rgb(103, 71, 92);
+  border-width: 1rem;
+  border: solid;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.page-text {
+  width: 40%;
 }
