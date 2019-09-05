@@ -4,7 +4,6 @@ import { ProblemsService } from '../services/problems.service';
 import { Subscription } from 'rxjs';
 import { AlertService } from 'src/app/core/alert/alert.service';
 import { NgForm } from '@angular/forms';
-import { allSettled } from 'q';
 
 @Component({
   selector: 'app-list-problems',
