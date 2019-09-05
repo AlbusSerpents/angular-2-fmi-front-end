@@ -33,3 +33,12 @@ interface CreateProblemResponse {
 interface ProblemSearch {
   search: string;
 }
+
+interface SolutionRequest {
+  code: string;
+}
+
+interface SolutionResults {
+  points: number;
+  results: boolean[];
+}

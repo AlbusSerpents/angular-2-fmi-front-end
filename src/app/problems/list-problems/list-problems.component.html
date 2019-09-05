@@ -1,0 +1,36 @@
+<div class="screen">
+  <div class="content">
+    <div class="forms-container">
+      <form (ngSubmit)="loadProblems(form)" #form="ngForm">
+        <div class="container-form">
+          <div class="search-part form-field">
+            <div class="input-field">
+              <input id="search-input" [(ngModel)]="parameters.search" name="search" #search="ngModel" />
+            </div>
+          </div>
+          <div class="search-part buttons-block">
+            <button [ngClass]="searchDisabled ? 'disabled' : ''" [disabled]="searchDisabled">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <table class="results-table" *ngIf="problems.length > 0">
+      <thead>
+        <tr>
+          <th class="column-size-1">Problem Name</th>
+          <th class="column-size-1">Creator Name</th>
+          <th class="column-size-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let problem of problems">
+          <td>{{ problem.name }}</td>
+          <td>
+            <a [routerLink]="['/profile']" [queryParams]="{ id: problem.creatorId }">{{ problem.creatorName }}</a>
+          </td>
+          <td><button class="view-button" (click)="viewProblem(problem.id)">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

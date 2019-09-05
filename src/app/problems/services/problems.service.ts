@@ -32,4 +32,8 @@ export class ProblemsService {
   getTests(id: string): Observable<ProblemTest[]> {
     return this.connector.get(`problems/${id}/tests`);
   }
+
+  solve(id: string, request: SolutionRequest): Observable<SolutionResults> {
+    return this.connector.post(`problems/${id}/solve`, request);
+  }
 }

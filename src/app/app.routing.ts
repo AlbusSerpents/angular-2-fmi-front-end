@@ -6,6 +6,7 @@ import { LoginComponent } from './home/login/login.component';
 import { RegistrationComponent } from './home/registration/registration.component';
 import { MyProfileComponent } from './users/my-profile/my-profile.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
+import { ListProblemsComponent } from './problems/list-problems/list-problems.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,12 @@ const routes: Routes = [
   {
     path: 'profile',
     component: UserProfileComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'problems',
+    component: ListProblemsComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

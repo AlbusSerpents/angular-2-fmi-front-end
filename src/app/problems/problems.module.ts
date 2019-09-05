@@ -11,6 +11,6 @@ import { ProblemDetailsComponent } from './problem-details/problem-details.compo
   imports: [CommonModule, CoreModule, FormsModule, RouterModule],
   providers: [ProblemsService],
   declarations: [ListProblemsComponent, ProblemDetailsComponent],
-  exports: [ListProblemsComponent]
+  exports: [ListProblemsComponent, ProblemDetailsComponent]
 })
 export class ProblemsModule { }
