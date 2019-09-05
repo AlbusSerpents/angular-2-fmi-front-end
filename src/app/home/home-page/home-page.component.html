@@ -21,7 +21,11 @@
         </div>
       </div>
     </div>
-    <div class="buttons">
+    <div *ngIf="auth.isLoggedIn()" class="buttons">
+      <button class="big-button pull-right" (click)="problems()">Practice</button>
+      <button class="big-button pull-right" (click)="competitions()">Competitions</button>
+    </div>
+    <div *ngIf="!auth.isLoggedIn()" class="buttons">
       <button class="big-button pull-right" (click)="login()">Log In</button>
       <button class="big-button pull-right" (click)="registration()">Register</button>
     </div>
