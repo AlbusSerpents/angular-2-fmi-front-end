@@ -6,11 +6,12 @@ import { ProblemsService } from './services/problems.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProblemDetailsComponent } from './problem-details/problem-details.component';
+import { ProblemStatisticsComponent } from './problem-statistics/problem-statistics.component';
 
 @NgModule({
   imports: [CommonModule, CoreModule, FormsModule, RouterModule],
   providers: [ProblemsService],
-  declarations: [ListProblemsComponent, ProblemDetailsComponent],
-  exports: [ListProblemsComponent, ProblemDetailsComponent]
+  declarations: [ListProblemsComponent, ProblemDetailsComponent, ProblemStatisticsComponent],
+  exports: [ListProblemsComponent, ProblemDetailsComponent, ProblemStatisticsComponent]
 })
 export class ProblemsModule { }

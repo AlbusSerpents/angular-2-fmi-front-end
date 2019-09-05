@@ -13,7 +13,7 @@ import { allSettled } from 'q';
 })
 export class ListProblemsComponent implements OnInit, OnDestroy {
 
-  searchDisabled = false
+  searchDisabled = false;
   problems: ProblemInfo[] = [];
   parameters: ProblemSearch = {
     search: null
@@ -62,6 +62,10 @@ export class ListProblemsComponent implements OnInit, OnDestroy {
 
   viewProblem(id: string): void {
     this.router.navigate(['/problems/view'], { queryParams: { id: id } });
+  }
+
+  statistics(id: string): void {
+    this.router.navigate(['/problems/statistics'], { queryParams: { id: id } });
   }
 
   private removeOldSubscription(): void {

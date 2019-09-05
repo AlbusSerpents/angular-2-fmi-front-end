@@ -40,6 +40,7 @@
   border-spacing: 0.4rem;
   text-align: center;
   border-color: rgb(103, 71, 92);
+  overflow: scroll;
 }
 
 .results-table th {
@@ -62,8 +63,14 @@
   padding-bottom: 0.1rem;
 }
 
-.results-table td .view-button {
-  width: 100%;
+.results-table td .buttons-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.results-table td .action-button {
+  width: 40%;
   border: 2rem solid;
   border-color: bisque;
   background-color: rgb(103, 71, 92);

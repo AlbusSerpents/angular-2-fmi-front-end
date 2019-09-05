@@ -36,4 +36,8 @@ export class ProblemsService {
   solve(id: string, request: SolutionRequest): Observable<SolutionResults> {
     return this.connector.post(`problems/${id}/solve`, request);
   }
+
+  statistics(id: string): Observable<ProblemSubmition[]> {
+    return this.connector.get(`problems/${id}/solutions`);
+  }
 }

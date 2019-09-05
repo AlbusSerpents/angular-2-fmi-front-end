@@ -28,7 +28,10 @@
           <td>
             <a [routerLink]="['/profile']" [queryParams]="{ id: problem.creatorId }">{{ problem.creatorName }}</a>
           </td>
-          <td><button class="view-button" (click)="viewProblem(problem.id)">View</button></td>
+          <td class="buttons-cell">
+            <button class="action-button" (click)="viewProblem(problem.id)">View</button>
+            <button class="action-button" (click)="statistics(problem.id)">See Solutions</button>
+          </td>
         </tr>
       </tbody>
     </table>

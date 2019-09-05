@@ -1,0 +1,23 @@
+<div class="screen">
+  <div class="content">
+    <button (click)="back()" class="back-button" [ngClass]="searchDisabled ? 'disabled' : ''" [disabled]="searchDisabled">Back</button>
+    <table class="results-table" *ngIf="statistics.length > 0">
+      <thead>
+        <tr>
+          <th class="column-size-1">Submitted By</th>
+          <th class="column-size-1">Submition Date</th>
+          <th class="column-size-1">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let problem of statistics">
+          <td>
+            <a [routerLink]="['/profile']" [queryParams]="{ id: problem.creatorId }">{{ problem.user }}</a>
+          </td>
+          <td>{{ problem.submittedAt | date }}</td>
+          <td>{{ problem.points }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -42,3 +42,8 @@ interface SolutionResults {
   points: number;
   results: boolean[];
 }
+interface ProblemSubmition {
+  user: string;
+  submittedAt: string;
+  points: number;
+}
