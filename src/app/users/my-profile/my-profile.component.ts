@@ -45,6 +45,9 @@ export class MyProfileComponent implements OnInit, OnDestroy {
         },
         error => {
           this.alertService.error(error.code);
+        },
+        () => {
+          this.submitDisabled = false;
         }
       );
   }
