@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CometitionsListComponent } from './cometitions-list/cometitions-list.component';
+import { CometitionsListComponent } from './competitions-list/cometitions-list.component';
 import { CompetitionsService } from './services/competitions.service';
 import { CoreModule } from '../core/core.module';
 import { FormsModule } from '@angular/forms';

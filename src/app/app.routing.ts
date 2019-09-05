@@ -9,7 +9,7 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { ListProblemsComponent } from './problems/list-problems/list-problems.component';
 import { ProblemDetailsComponent } from './problems/problem-details/problem-details.component';
 import { ProblemStatisticsComponent } from './problems/problem-statistics/problem-statistics.component';
-import { CometitionsListComponent } from './competitions/cometitions-list/cometitions-list.component';
+import { CometitionsListComponent } from './competitions/competitions-list/cometitions-list.component';
 
 const routes: Routes = [
   {
