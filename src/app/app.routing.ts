@@ -8,6 +8,7 @@ import { MyProfileComponent } from './users/my-profile/my-profile.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { ListProblemsComponent } from './problems/list-problems/list-problems.component';
 import { ProblemDetailsComponent } from './problems/problem-details/problem-details.component';
+import { ProblemStatisticsComponent } from './problems/problem-statistics/problem-statistics.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,12 @@ const routes: Routes = [
     path: 'problems/view',
     pathMatch: 'full',
     component: ProblemDetailsComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'problems/statistics',
+    component: ProblemStatisticsComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }
