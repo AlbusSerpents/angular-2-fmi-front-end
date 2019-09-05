@@ -1,0 +1,119 @@
+.screen {
+  filter: grayscale(65%);
+  opacity: 50%;
+  background-color: bisque;
+  display: flex;
+  position: fixed;
+  padding-top: 5rem;
+  padding-left: 7rem;
+  padding-bottom: 4rem;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
+}
+
+.container-form {
+  width: 70rem;
+  font-size: 2.3rem;
+  border-radius: 1rem;
+  background-color: rgb(103, 71, 92);
+  display: flex;
+  padding: 2rem;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.results-table {
+  font-size: 2.3rem;
+  background-color: rgb(103, 71, 92);
+  width: 90%;
+  table-layout: fixed;
+  margin-top: 4rem;
+  border-radius: 10rem;
+  border: 1rem solid;
+  border-spacing: 0.4rem;
+  text-align: center;
+  border-color: rgb(103, 71, 92);
+  overflow: scroll;
+}
+
+.results-table th {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 0.2rem;
+  background-color: bisque;
+  color: rgb(103, 71, 92);
+  border: 0.5rem solid;
+  border-color: rgb(103, 71, 92);
+  padding-bottom: 0.2rem;
+}
+
+.results-table td {
+  background-color: bisque;
+  border: 0.4rem solid;
+  border-color: rgb(103, 71, 92);
+  color: rgb(103, 71, 92);
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.results-table td .buttons-cell {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.results-table td .action-button {
+  width: 40%;
+  border: 2rem solid;
+  border-color: bisque;
+  background-color: rgb(103, 71, 92);
+  color: bisque;
+}
+
+.container-form .search-part {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.container-form label {
+  color: bisque;
+}
+
+.container-form .buttons-block {
+  display: flex;
+  justify-content: center;
+}
+
+.container-form button {
+  padding: 0.5rem;
+  background-color: bisque;
+  font-weight: bold;
+  color: rgb(103, 71, 92);
+}
+
+.container-form .form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form .form-field .input-field input {
+  background-color: azure;
+}
+
+.container-form .form-field .input-field {
+  display: flex;
+  justify-content: space-between;
+}
+
+.disabled {
+  filter: brightness(50%);
+}

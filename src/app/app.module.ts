@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
 import { ProblemsModule } from './problems/problems.module';
+import { CompetitionsModule } from './competitions/competitions.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProblemsModule } from './problems/problems.module';
     RouterModule,
     HomeModule,
     UsersModule,
-    ProblemsModule
+    ProblemsModule,
+    CompetitionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

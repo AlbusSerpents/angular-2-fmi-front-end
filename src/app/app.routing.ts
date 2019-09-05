@@ -9,6 +9,7 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { ListProblemsComponent } from './problems/list-problems/list-problems.component';
 import { ProblemDetailsComponent } from './problems/problem-details/problem-details.component';
 import { ProblemStatisticsComponent } from './problems/problem-statistics/problem-statistics.component';
+import { CometitionsListComponent } from './competitions/cometitions-list/cometitions-list.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,12 @@ const routes: Routes = [
   {
     path: 'problems/statistics',
     component: ProblemStatisticsComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'competitions',
+    component: CometitionsListComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

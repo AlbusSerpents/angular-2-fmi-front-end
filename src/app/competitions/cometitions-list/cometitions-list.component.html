@@ -1,0 +1,39 @@
+<div class="screen">
+  <div class="content">
+    <div class="forms-container">
+      <form (ngSubmit)="loadCompetitions(form)" #form="ngForm">
+        <div class="container-form">
+          <div class="search-part form-field">
+            <div class="input-field">
+              <input id="search-input" [(ngModel)]="parameters.search" name="search" #search="ngModel" />
+            </div>
+          </div>
+          <div class="search-part buttons-block">
+            <button [ngClass]="searchDisabled ? 'disabled' : ''" [disabled]="searchDisabled">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <table class="results-table" *ngIf="compeitions.length > 0">
+      <thead>
+        <tr>
+          <th class="column-size-1">Compeition Name</th>
+          <th class="column-size-1">Creator Name</th>
+          <th class="column-size-1">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let competition of compeitions">
+          <td>{{ competition.name }}</td>
+          <td>
+            <a [routerLink]="['/profile']" [queryParams]="{ id: competition.creatorId }">{{ competition.creatorName }}</a>
+          </td>
+          <td class="buttons-cell">
+            <button class="action-button" (click)="viewCompetition(competition.id)">View</button>
+            <button class="action-button" (click)="statistics(competition.id)">See Standings</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
