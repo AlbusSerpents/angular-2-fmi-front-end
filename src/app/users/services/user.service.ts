@@ -16,7 +16,7 @@ export class UserService {
   }
 
   getProfile(id: string): Observable<UserProile> {
-    return this.connector.get(`profile/${id}`);
+    return this.connector.get(`users/profile/${id}`);
   }
 
 }

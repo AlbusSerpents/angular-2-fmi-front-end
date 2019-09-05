@@ -1,0 +1,21 @@
+<div class="screen">
+  <div class="container-form">
+    <form #form="ngForm" class="forms-container">
+      <div class="form-field">
+        <div class="input-field">
+          <label for="name-input">Name:</label>
+          <input id="name-input" class="temp" [(ngModel)]="profile.name" name="name" #name="ngModel" disabled />
+        </div>
+      </div>
+      <div class="form-field">
+        <div class="input-field">
+          <label for="email-input">Email:</label>
+          <input id="email-input" class="temp" type="email" [(ngModel)]="profile.email" name="email" #email="ngModel" disabled />
+        </div>
+      </div>
+      <div class="buttons-block">
+        <button (click)="back()" [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
