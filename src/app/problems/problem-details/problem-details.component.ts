@@ -24,10 +24,7 @@ export class ProblemDetailsComponent implements OnInit, OnDestroy {
     description: '',
   }
 
-  solutionResults: SolutionResults = {
-    points: null,
-    results: []
-  };
+  solutionResults: SolutionResults = null;
 
   solutionCode = '';
 

@@ -10,6 +10,7 @@ import { ListProblemsComponent } from './problems/list-problems/list-problems.co
 import { ProblemDetailsComponent } from './problems/problem-details/problem-details.component';
 import { ProblemStatisticsComponent } from './problems/problem-statistics/problem-statistics.component';
 import { CometitionsListComponent } from './competitions/competitions-list/cometitions-list.component';
+import { CompetitionDetailsComponent } from './competitions/competition-details/competition-details.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,12 @@ const routes: Routes = [
   {
     path: 'competitions',
     component: CometitionsListComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'competitions/view',
+    component: CompetitionDetailsComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

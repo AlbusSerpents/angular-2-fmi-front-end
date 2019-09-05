@@ -1,0 +1,30 @@
+<div class="screen">
+  <div class="container">
+    <div class="positions">
+      <div class="names">
+        <span class="title">{{ competition.name }} </span>
+      </div>
+      <div class="creator">
+        <span>
+          <a [routerLink]="['/profile']" [queryParams]="{ id: competition.creatorId }"> Submitted by: {{ competition.creatorName }}</a>
+        </span>
+      </div>
+      <div *ngIf="competition.problems" class="problem">
+        <table class="problems">
+          <tr>
+            <th *ngFor="let problem of competition.problems; let i = index">{{ i + 1 }}</th>
+          </tr>
+          <tr>
+            <td *ngFor="let problem of competition.problems">
+              <a (click)="viewProblem(problem.id)">{{ problem.name }}</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="buttons-block">
+        <button [ngClass]="actionsDisabled ? 'disabled' : ''" [disabled]="actionsDisabled" (click)="back()">Back</button>
+        <button [ngClass]="actionsDisabled ? 'disabled' : ''" [disabled]="actionsDisabled" (click)="enter()">Enter</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -43,9 +43,11 @@ export class LoginComponent implements OnDestroy {
       .login(this.request)
       .subscribe(
         _ => {
+          this.submitDisabled = false;
           this.router.navigateByUrl('/home');
         },
         error => {
+          this.submitDisabled = false;
           this.alertService.error(error.code);
         },
         () => {

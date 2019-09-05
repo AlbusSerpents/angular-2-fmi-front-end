@@ -1,0 +1,113 @@
+.screen {
+  filter: grayscale(65%);
+  opacity: 50%;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 6rem;
+  padding-bottom: 0;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.creator {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+a {
+  color: bisque;
+  text-decoration: underline;
+}
+
+.positions {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  font-size: 2.3rem;
+  border-radius: 1rem;
+  background-color: rgb(103, 71, 92);
+  color: bisque;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.container label {
+  color: bisque;
+}
+
+.container .buttons-block {
+  margin: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.container button {
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: bisque;
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: rgb(103, 71, 92);
+}
+
+.problem {
+  font-size: 2rem;
+}
+
+.disabled {
+  filter: brightness(50%);
+}
+
+.problems {
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  border-color: bisque;
+  margin-top: 0.8rem;
+}
+
+.problems td {
+  text-align: center;
+  background-color: bisque;
+  border-color: rgb(103, 71, 92);
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  font-size: 3.6rem;
+  font-weight: bold;
+  width: 20rem;
+}
+
+.problems td a {
+  color: rgb(103, 71, 92);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.problems th {
+  padding: 0.3rem;
+  text-align: center;
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  border-color: bisque;
+}
