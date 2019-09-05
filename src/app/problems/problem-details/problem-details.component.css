@@ -1,0 +1,134 @@
+.screen {
+  filter: grayscale(65%);
+  opacity: 50%;
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: 6rem;
+  padding-bottom: 0;
+}
+
+.names {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+
+.description {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  width: 90%;
+  margin-bottom: 4rem;
+}
+
+.creator {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+a {
+  color: bisque;
+  text-decoration: underline;
+}
+
+.form-positions {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-form {
+  width: 80%;
+  height: 85%;
+  font-size: 2.3rem;
+  border-radius: 1rem;
+  background-color: rgb(103, 71, 92);
+  color: bisque;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.container-form label {
+  color: bisque;
+}
+
+.container-form .buttons-block {
+  margin: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  align-self: flex-end;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.container-form button {
+  padding: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: bisque;
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: rgb(103, 71, 92);
+}
+
+.container-form .form-field {
+  height: 27rem;
+  margin-bottom: 3rem;
+}
+
+.container-form .form-field .input-field label {
+  padding-right: 0.5rem;
+  height: 25rem;
+}
+
+textarea {
+  height: 25rem;
+  width: 100%;
+  color: rgb(103, 71, 92);
+}
+
+.result {
+  font-size: 2rem;
+}
+
+.container-form .form-field .inp-error {
+  color: red;
+  font-size: 1.9rem;
+}
+
+.disabled {
+  filter: brightness(50%);
+}
+
+.test-results {
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  border-color: bisque;
+  margin-top: 0.8rem;
+}
+
+.test-results td {
+  padding: 0.3rem;
+  text-align: center;
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  border-color: bisque;
+  width: 9rem;
+}
+
+.test-results th {
+  padding: 0.3rem;
+  text-align: center;
+  border: 0.1rem solid;
+  border-spacing: 0.4rem;
+  border-color: bisque;
+}

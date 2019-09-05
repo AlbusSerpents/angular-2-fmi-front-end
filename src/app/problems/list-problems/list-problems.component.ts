@@ -61,7 +61,7 @@ export class ListProblemsComponent implements OnInit, OnDestroy {
   }
 
   viewProblem(id: string): void {
-    this.router.navigateByUrl('/problems/view', { queryParams: { id: id } });
+    this.router.navigate(['/problems/view'], { queryParams: { id: id } });
   }
 
   private removeOldSubscription(): void {

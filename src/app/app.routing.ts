@@ -7,6 +7,7 @@ import { RegistrationComponent } from './home/registration/registration.componen
 import { MyProfileComponent } from './users/my-profile/my-profile.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { ListProblemsComponent } from './problems/list-problems/list-problems.component';
+import { ProblemDetailsComponent } from './problems/problem-details/problem-details.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,15 @@ const routes: Routes = [
   },
   {
     path: 'problems',
+    pathMatch: 'full',
     component: ListProblemsComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'problems/view',
+    pathMatch: 'full',
+    component: ProblemDetailsComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

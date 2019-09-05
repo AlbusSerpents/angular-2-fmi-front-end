@@ -1,0 +1,50 @@
+<div class="screen">
+  <div class="container-form">
+    <form (ngSubmit)="solve(form)" #form="ngForm" class="forms-container">
+      <div class="form-positions">
+        <div class="names">
+          <span class="title">{{ problem.name }} </span>
+        </div>
+        <div class="creator">
+          <span>
+            <a [routerLink]="['/profile']" [queryParams]="{ id: problem.creatorId }"> Submitted by: {{ problem.creatorName }}</a>
+          </span>
+        </div>
+        <div class="description">
+          <span>{{ problem.description }}</span>
+        </div>
+        <div class="form-field">
+          <div class="input-field">
+            <textarea
+              id="code-input"
+              [(ngModel)]="solutionCode"
+              name="code"
+              #code="ngModel"
+              required
+              placeholder="Write your solution here"
+            >
+            </textarea>
+          </div>
+          <div class="inp-error" *ngIf="(code.dirty || code.touched) && !code.valid">
+            A solution is required
+          </div>
+        </div>
+        <div *ngIf="solutionResults" class="result">
+          <span class="result-points">Score = {{ solutionResults.points }} points</span>
+          <table class="test-results">
+            <tr>
+              <th *ngFor="let passed of solutionResults.results; let i = index">{{ i + 1 }}</th>
+            </tr>
+            <tr>
+              <td *ngFor="let passed of solutionResults.results">{{ passed ? 'success' : 'fail' }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="buttons-block">
+          <button [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled" (click)="back()">Back</button>
+          <button [ngClass]="submitDisabled ? 'disabled' : ''" [disabled]="submitDisabled">Submit solution</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
