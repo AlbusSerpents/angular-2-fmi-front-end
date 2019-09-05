@@ -11,6 +11,7 @@ import { ProblemDetailsComponent } from './problems/problem-details/problem-deta
 import { ProblemStatisticsComponent } from './problems/problem-statistics/problem-statistics.component';
 import { CometitionsListComponent } from './competitions/competitions-list/cometitions-list.component';
 import { CompetitionDetailsComponent } from './competitions/competition-details/competition-details.component';
+import { CompetitionStandingsComponent } from './competitions/competition-standings/competition-standings.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,12 @@ const routes: Routes = [
   {
     path: 'competitions/view',
     component: CompetitionDetailsComponent,
+    canActivate: [LoggedInGuard],
+    canActivateChild: [LoggedInChildGuard]
+  },
+  {
+    path: 'competitions/standings',
+    component: CompetitionStandingsComponent,
     canActivate: [LoggedInGuard],
     canActivateChild: [LoggedInChildGuard]
   }

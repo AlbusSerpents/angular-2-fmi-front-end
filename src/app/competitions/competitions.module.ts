@@ -6,11 +6,12 @@ import { CoreModule } from '../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CompetitionDetailsComponent } from './competition-details/competition-details.component';
+import { CompetitionStandingsComponent } from './competition-standings/competition-standings.component';
 
 @NgModule({
   imports: [CommonModule, CoreModule, FormsModule, RouterModule],
   providers: [CompetitionsService],
-  declarations: [CometitionsListComponent, CompetitionDetailsComponent],
-  exports: [CometitionsListComponent, CompetitionDetailsComponent]
+  declarations: [CometitionsListComponent, CompetitionDetailsComponent, CompetitionStandingsComponent],
+  exports: [CometitionsListComponent, CompetitionDetailsComponent, CompetitionStandingsComponent]
 })
 export class CompetitionsModule { }

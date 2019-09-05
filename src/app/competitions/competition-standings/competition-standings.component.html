@@ -1,0 +1,21 @@
+<div class="screen">
+  <div class="content">
+    <button (click)="back()" class="back-button" [ngClass]="searchDisabled ? 'disabled' : ''" [disabled]="searchDisabled">Back</button>
+    <table class="results-table" *ngIf="standings.length > 0">
+      <thead>
+        <tr>
+          <th class="column-size-1">Contestant</th>
+          <th class="column-size-1">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of standings">
+          <td>
+            <a [routerLink]="['/profile']" [queryParams]="{ id: record.userId }">{{ record.name }}</a>
+          </td>
+          <td>{{ record.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
