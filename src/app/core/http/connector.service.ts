@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class ConnectorService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://ec2-54-161-131-172.compute-1.amazonaws.com:3000';
 
   constructor(
     private router: Router,
