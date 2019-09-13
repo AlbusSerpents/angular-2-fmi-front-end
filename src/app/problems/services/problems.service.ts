@@ -37,6 +37,10 @@ export class ProblemsService {
     return this.connector.post(`problems/${id}/solve`, request);
   }
 
+  solveForCompeititon(competitionId: string, id: string, request: SolutionRequest): Observable<CompetitionResult> {
+    return this.connector.post(`competitions/${competitionId}/${id}`, request);
+  }
+
   statistics(id: string): Observable<ProblemSubmition[]> {
     return this.connector.get(`problems/${id}/solutions`);
   }

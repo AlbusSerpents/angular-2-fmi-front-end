@@ -67,7 +67,7 @@ export class CompetitionDetailsComponent implements OnInit {
   }
 
   viewProblem(id: string) {
-    this.router.navigate(['/problems/view'], { queryParams: { id: id } });
+    this.router.navigate(['/problems/view'], { queryParams: { id: id, competition: this.competition.id } });
   }
 
   back() {

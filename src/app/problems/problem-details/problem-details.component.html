@@ -29,7 +29,10 @@
             A solution is required
           </div>
         </div>
-        <div *ngIf="solutionResults" class="result">
+        <div *ngIf="competitionPoints" class="result">
+          <span class="result-points">Score = {{ competitionPoints }} points</span>
+        </div>
+        <div *ngIf="solutionResults && solutionResults.points" class="result">
           <span class="result-points">Score = {{ solutionResults.points }} points</span>
           <table class="test-results">
             <tr>

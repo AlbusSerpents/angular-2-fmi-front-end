@@ -42,6 +42,13 @@ interface SolutionResults {
   points: number;
   results: boolean[];
 }
+
+interface CompetitionResult {
+  score: number;
+  userId: string;
+  name: string;
+}
+
 interface ProblemSubmition {
   user: string;
   submittedAt: string;

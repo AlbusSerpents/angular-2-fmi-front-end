@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProblemsService } from '../services/problems.service';
 import { Subscription } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { map, switchMap, tap } from 'rxjs/operators';
 import { AuthStorageService } from 'src/app/core/auth/auth.storage.service';
 import { AlertService } from 'src/app/core/alert/alert.service';
 import { NgForm } from '@angular/forms';
@@ -26,10 +26,13 @@ export class ProblemDetailsComponent implements OnInit, OnDestroy {
 
   solutionResults: SolutionResults = null;
 
+  competition: string;
+  competitionPoints: number;
   solutionCode = '';
 
   private details$: Subscription;
   private solution$: Subscription;
+  private routerData$: Subscription;
 
   constructor(
     private router: Router,
@@ -41,9 +44,14 @@ export class ProblemDetailsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
+    this.routerData$ = this.route.data.subscribe(data => {
+      this.competition = data.competition;
+    });
+
     this.details$ = this.route
       .queryParamMap
       .pipe(
+        tap(params => { this.competition = params.get('competition'); }),
         map(params => params.get('id')),
         switchMap(id => this.service.getProblemDetails(id)))
       .subscribe(
@@ -72,6 +80,14 @@ export class ProblemDetailsComponent implements OnInit, OnDestroy {
 
   private executeSolve() {
     this.deleteSubscription(this.solution$);
+    if (this.competition) {
+      this.forCompetition();
+    } else {
+      this.forPractive();
+    }
+  }
+
+  private forPractive() {
     const request: SolutionRequest = { code: this.solutionCode };
     this.solution$ = this.service
       .solve(this.problem.id, request)
@@ -91,13 +107,38 @@ export class ProblemDetailsComponent implements OnInit, OnDestroy {
       );
   }
 
+  private forCompetition() {
+    const request: SolutionRequest = { code: this.solutionCode };
+    this.solution$ = this.service
+      .solveForCompeititon(this.competition, this.problem.id, request)
+      .subscribe(
+        results => {
+          this.submitDisabled = false;
+          this.competitionPoints = results.score;
+          this.alertService.success('Solution processed');
+        },
+        error => {
+          this.submitDisabled = false;
+          this.alertService.error(error.code);
+        },
+        () => {
+          this.submitDisabled = false;
+        }
+      );
+  }
+
   back() {
-    this.router.navigateByUrl('/problems');
+    if (this.competition) {
+      this.router.navigate(['/competitions/view'], { queryParams: { id: this.competition } });
+    } else {
+      this.router.navigateByUrl('/problems');
+    }
   }
 
   ngOnDestroy() {
     this.deleteSubscription(this.details$);
     this.deleteSubscription(this.solution$);
+    this.deleteSubscription(this.routerData$);
   }
 
   private deleteSubscription(sub: Subscription) {
